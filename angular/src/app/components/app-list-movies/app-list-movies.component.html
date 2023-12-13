@@ -1,0 +1,11 @@
+<div *ngFor="let movie of movies">
+    <h2>{{ movie.Title }}</h2>
+    <p>{{ movie.Description }}</p>
+    <p>Rating: {{ movie.Rating }}</p>
+    <p>Duration: {{ movie.Duration }}</p>
+    <p>Genres: {{ movie.Genre.join(', ') }}</p>
+    <p>Released Date: {{ movie['Released date'] }}</p>
+    <a href="{{ movie['Trailer Link'] }}" target="_blank">Trailer</a>
+    <hr />
+  </div>
+  
