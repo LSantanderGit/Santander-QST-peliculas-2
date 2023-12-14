@@ -1,7 +1,6 @@
 package qst.movies
 
 class Movies {
-
     String title
     String description 
     String rating

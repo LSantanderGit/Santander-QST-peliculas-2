@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": " concurrently \"ng serve\"  \"json-server --watch db.json --port 3000\"",
+    "start": "concurrently \"npm run start:angular\" \"npm run start:grails\"",
+    "start:angular": "ng serve",
+    "start:grails": "cd ../grails/grails-qst-movies && grails run-app",
+
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",

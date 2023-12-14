@@ -1,6 +1,6 @@
 package qst.Init
 
-import qst.qst.movies.Movies
+import qst.movies.Movies
 
 class Init {
     
