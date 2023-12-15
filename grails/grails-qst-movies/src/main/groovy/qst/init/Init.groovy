@@ -12,7 +12,7 @@ class Init {
     
     private static void initMovies() {
         println "Loading Movies..."
-        def movies = [
+        def moviesData = [
             ["title": "Tenet", 
             "description": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.", 
             "rating": "7.8", 
@@ -59,9 +59,20 @@ class Init {
             "posterDir": "../../assets/images/Avengers.png"]
             
         ]
-        movies.each { movies ->
-            if(Movies.findByTitle(movies.title)) return
-            new Movies(movies).save(flush: true, failOnError: true)
+        
+        moviesData.each { movieData ->
+            if (Movies.findByTitle(movieData.title)) return
+            def movie = new Movies(
+                title: movieData.title,
+                description: movieData.description,
+                rating: movieData.rating,
+                duration: movieData.duration,
+                genre: movieData.genre,
+                releasedDate: movieData.releasedDate,
+                trailerLink: movieData.trailerLink,
+                posterDir: movieData.posterDir
+            )
+            movie.save(flush: true, failOnError: true)
         }
     }
 }

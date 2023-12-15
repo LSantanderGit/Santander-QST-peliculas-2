@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 
 export class MoviesService {
-  private grailsUrl = 'http://localhost:8080/grails.qst.movies/';
+  private grailsUrl = 'http://localhost:8080/movies/';
 
   constructor(private http: HttpClient) {}
 
   getMovies(): Observable<any[]> {
-      return this.http.get<any[]>(`${this.grailsUrl}movies/getMovies`);
+      return this.http.get<any[]>(`${this.grailsUrl}getMovies`);
   }
 }

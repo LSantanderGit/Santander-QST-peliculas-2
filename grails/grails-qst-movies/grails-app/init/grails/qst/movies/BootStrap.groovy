@@ -1,5 +1,6 @@
 package grails.qst.movies
-import qst.init.Init
+import qst.Init.Init
+
 
 class BootStrap {
 

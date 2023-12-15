@@ -15,6 +15,7 @@ class MoviesController {
     def create() {}
 
     def getMovies() {
+        println("HOla llegue a grails")
         def movies = moviesService.listMovies()
         return movies
     }

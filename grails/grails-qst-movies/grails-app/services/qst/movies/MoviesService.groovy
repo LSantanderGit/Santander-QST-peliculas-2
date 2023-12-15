@@ -15,9 +15,9 @@ class MoviesService {
             movies.description as description,
             movies.rating as rating,
             movies.duration as duration,
-            movies.releasedDate as releasedDate,
-            movies.trailerLink as trailerLink,
-            movies.posterDir as posterDir,
+            movies.released_date as releasedDate,
+            movies.trailer_link as trailerLink,
+            movies.poster_dir as posterDir,
             movies.genre as genre
         FROM movies; """
     
@@ -35,5 +35,7 @@ class MoviesService {
             return item
         }      
         return movies
-    } 
+    }
+    
+     
 }

@@ -9,6 +9,7 @@ import { MoviesService } from '../../services/movies.service';
   templateUrl: './app-list-movies.component.html',
   styleUrl: './app-list-movies.component.scss'
 })
+
 export class AppListMoviesComponent implements OnInit {
   movies: any[] = [];
 

@@ -20,5 +20,4 @@ class Movies {
         posterDir nullable: false
         genre nullable: false
     }
-
 }
