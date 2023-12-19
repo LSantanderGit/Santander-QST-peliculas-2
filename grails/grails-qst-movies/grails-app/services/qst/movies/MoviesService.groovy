@@ -15,9 +15,9 @@ class MoviesService {
             movies.description as description,
             movies.rating as rating,
             movies.duration as duration,
-            movies.released_date as releasedDate,
-            movies.trailer_link as trailerLink,
-            movies.poster_dir as posterDir,
+            movies.released_date as releaseddate,
+            movies.trailer_link as trailerlink,
+            movies.poster_dir as posterdir,
             movies.genre as genre
         FROM movies; """
     
@@ -27,11 +27,10 @@ class MoviesService {
             item["description"] = it.description
             item["rating"] = it.rating
             item["duration"] = it.duration
-            item["releasedDate"] = it.releasedDate
-            item["trailerLink"] = it.trailerLink
-            item["posterDir"] = it.posterDir
+            item["releasedDate"] = it.releaseddate
+            item["trailerLink"] = it.trailerlink
+            item["posterDir"] = it.posterdir
             item["genre"] = it.genre
-
             return item
         }      
         return movies

@@ -8,7 +8,7 @@ class Movies {
     String releasedDate
     String trailerLink
     String posterDir
-    List<String> genre
+    String genre
 
     static constraints = {
         title nullable: false

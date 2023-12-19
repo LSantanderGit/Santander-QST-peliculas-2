@@ -16,8 +16,14 @@ export class AppListMoviesComponent implements OnInit {
   constructor(private moviesService: MoviesService) {}
 
   ngOnInit() {
-    this.moviesService.getMovies().subscribe((data) => {
-      this.movies = data;
-    });
+    this.moviesService.getMovies().subscribe(
+      (data) => {
+        this.movies = data;
+        console.log('Received Movies:', this.movies);
+      },
+      (error) => {
+        console.error('Error fetching movies:', error);
+      }
+    );
   }
 }
