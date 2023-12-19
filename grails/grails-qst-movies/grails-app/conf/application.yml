@@ -1,7 +1,24 @@
 ---
 grails:
     cors:
-        enabled: true
+        enabled: false # Disable the CORS plugin if you're switching to manual configuration
+    rest:
+        cors:
+            enabled: true
+            allowCredentials: true
+            allowedOrigins:
+                - "*"  # Replace with the actual origin of your Angular app
+            allowedMethods:
+                - GET
+                - POST
+                - PUT
+                - DELETE
+            allowedHeaders:
+                - "Content-Type"
+                - "Authorization"
+                - "X-Requested-With"
+                - "Accept"
+
     profile: web
     codegen:
         defaultPackage: grails.qst.movies

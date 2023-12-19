@@ -18,6 +18,6 @@ class MoviesController {
         println("HOla llegue a grails")
         def movies = moviesService.listMovies()
         println("movies: \n" + movies)
-        return movies
+        render movies as JSON
     }
 }

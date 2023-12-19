@@ -1,13 +1,16 @@
 <div *ngFor="let movie of movies">
-    <img src="{{movie.PosterDir}}">
-    <h2>{{ movie.Title }}</h2>
-    <p>{{ movie.Description }}</p>
-    <p>Rating: {{ movie.Rating }}</p>
-    <p>Duration: {{ movie.Duration }}</p>
-    <p>Genres: {{ movie.Genre.join(', ') }}</p>
-    <p>Released Date: {{ movie['Released date'] }}</p>
-    <a href="{{ movie['Trailer Link'] }}" target="_blank">Trailer</a>
+    <img [src]="movie.posterDir" alt="{{ movie.title }} Poster">
+    <h2>{{ movie.title }}</h2>
+    <p>{{ movie.description }}</p>
+    <p>Rating: {{ movie.rating }}</p>
+    <p>Duration: {{ movie.duration }}</p>
+    <div>
+        Genres:
+        <button *ngFor="let genre of movie.genre.split(' ')" (click)="genreButtonClick(genre)">{{ genre }}</button>
+    </div>
+    <p>Released Date: {{ movie.releasedDate }}</p>
+    Trailer:
+    <a [href]="movie.trailerLink" target="_blank">Watch it here!</a>
     <hr/>
-    <head></head>
-</div>
+  </div>
   

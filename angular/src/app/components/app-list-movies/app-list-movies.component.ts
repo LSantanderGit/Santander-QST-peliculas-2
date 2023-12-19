@@ -15,15 +15,19 @@ export class AppListMoviesComponent implements OnInit {
 
   constructor(private moviesService: MoviesService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.moviesService.getMovies().subscribe(
       (data) => {
+        console.log('Received Movies:', data);
         this.movies = data;
-        console.log('Received Movies:', this.movies);
       },
       (error) => {
         console.error('Error fetching movies:', error);
       }
     );
+  }
+
+  genreButtonClick(genre: string): void {
+    console.log(`Button clicked for genre: ${genre}`);
   }
 }
