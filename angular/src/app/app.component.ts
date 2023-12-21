@@ -5,12 +5,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppListMoviesComponent } from './components/app-list-movies/app-list-movies.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AppHeaderMoviesComponent } from './components/app-header-movies/app-header-movies.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HttpClientModule, AppListMoviesComponent, NgbModule],
+  imports: [CommonModule, 
+    RouterOutlet,
+    HttpClientModule,
+    AppListMoviesComponent,
+    NgbModule,
+    AppHeaderMoviesComponent],
+    
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
