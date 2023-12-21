@@ -1,0 +1,19 @@
+/* Add custom styles if needed */
+.row {
+    margin: 0; /* Remove default margin to avoid horizontal scroll */
+}
+
+.card {
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}  
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    margin-bottom: 10px;
+}
+  /* Adjust styling as needed */  

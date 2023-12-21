@@ -1,23 +1,34 @@
 ---
 grails:
     cors:
-        enabled: false # Disable the CORS plugin if you're switching to manual configuration
-    rest:
-        cors:
-            enabled: true
-            allowCredentials: true
+    enabled: true
+    allowCredentials: true
+    mappings:
+        - "/**":
             allowedOrigins:
-                - "*"  # Replace with the actual origin of your Angular app
+                - "http://localhost:4200"
             allowedMethods:
-                - GET
-                - POST
-                - PUT
-                - DELETE
+                - "GET"
+                - "POST"
+                - "PUT"
+                - "DELETE"
+                - "OPTIONS"
             allowedHeaders:
                 - "Content-Type"
                 - "Authorization"
                 - "X-Requested-With"
+                - "X-Auth-Token"
+                - "X-Csrf-Token"
+                - "Access-Control-Allow-Origin"
+                - "Access-Control-Allow-Headers"
+                - "Access-Control-Allow-Credentials"
+                - "Origin"
                 - "Accept"
+                - "X-Requested-With"
+                - "Content-Type"
+                - "Access-Control-Request-Method"
+                - "Access-Control-Request-Headers"
+
 
     profile: web
     codegen:

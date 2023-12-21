@@ -15,9 +15,15 @@ class MoviesController {
     def create() {}
 
     def getMovies() {
-        println("HOla llegue a grails")
         def movies = moviesService.listMovies()
-        println("movies: \n" + movies)
         render movies as JSON
     }
+
+    def getMoviesByGenre() {
+        def genre = params.genre
+        def movies = moviesService.listMoviesByGenre(genre)
+        render movies as JSON
+    }
+
+
 }

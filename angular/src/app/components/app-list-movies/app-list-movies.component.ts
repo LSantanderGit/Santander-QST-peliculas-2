@@ -18,8 +18,7 @@ export class AppListMoviesComponent implements OnInit {
   ngOnInit(): void {
     this.moviesService.getMovies().subscribe(
       (data) => {
-        console.log('Received Movies:', data);
-        this.movies = data;
+        this.movies = data; 
       },
       (error) => {
         console.error('Error fetching movies:', error);
@@ -28,6 +27,14 @@ export class AppListMoviesComponent implements OnInit {
   }
 
   genreButtonClick(genre: string): void {
-    console.log(`Button clicked for genre: ${genre}`);
-  }
+    this.moviesService.getMoviesByGenre(genre).subscribe(
+      (data) => {
+        console.log(`(app-list-movies.component) Movies for genre ${genre}:`, data);
+        this.movies = data;
+      },
+      (error) => {
+        console.error('Error fetching movies:', error);
+      }
+    );
+  }  
 }

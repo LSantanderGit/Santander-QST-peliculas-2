@@ -19,13 +19,22 @@ export class MoviesService {
   constructor(private http: HttpClient) {}
 
   getMovies(): Observable<MoviesInterface[]> { 
-    return this.http.get<MoviesInterface[]>(`${this.grailsUrl}/getMovies`)
-      .pipe(
-        tap((data) => console.log('Data received from service:', data)),
-        catchError((error) => {
-          console.error('Error fetching movies:', error);
-          return throwError(error); 
-        })
-      );
+    return this.http.get<MoviesInterface[]>(`${this.grailsUrl}/getMovies`).pipe(
+      catchError((error) => {
+        console.error('Error fetching movies:', error);
+        return throwError(error); 
+      })
+    );
+  }
+
+  getMoviesByGenre(genre: string): Observable<MoviesInterface[]> { 
+    const params = { genre };
+    
+    return this.http.get<MoviesInterface[]>(`${this.grailsUrl}/getMoviesByGenre`, { params }).pipe(
+      catchError((error) => {
+        console.error('Error fetching movies:', error);
+        return throwError(error); 
+      })
+    );
   }
 }

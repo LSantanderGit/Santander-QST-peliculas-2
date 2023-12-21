@@ -1,16 +1,21 @@
-<div *ngFor="let movie of movies">
-    <img [src]="movie.posterDir" alt="{{ movie.title }} Poster">
-    <h2>{{ movie.title }}</h2>
-    <p>{{ movie.description }}</p>
-    <p>Rating: {{ movie.rating }}</p>
-    <p>Duration: {{ movie.duration }}</p>
-    <div>
-        Genres:
-        <button *ngFor="let genre of movie.genre.split(' ')" (click)="genreButtonClick(genre)">{{ genre }}</button>
+<!-- Add Bootstrap classes for responsive layout -->
+<div class="row">
+    <div class="col-md-4" *ngFor="let movie of movies">
+        <div class="card mb-4 box-shadow">
+            <img class="card-img-top" [src]="movie.posterDir" alt="{{ movie.title }} Poster">
+            <div class="card-body">
+                <h2 class="card-title">{{ movie.title }}</h2>
+                <p class="card-text">{{ movie.description }}</p>
+                <p class="card-text">Rating: {{ movie.rating }}</p>
+                <p class="card-text">Duration: {{ movie.duration }}</p>
+                <div class="card-text">
+                    Genres:
+                    <button *ngFor="let genre of movie.genre.split(' ')" class="btn btn-sm btn-outline-secondary" (click)="genreButtonClick(genre)">{{ genre }}</button>
+                </div>
+                <p class="card-text">Released Date: {{ movie.releasedDate }}</p>
+                <p class="card-text">Trailer: <a [href]="movie.trailerLink" target="_blank">Watch it here!</a></p>
+            </div>
+            <hr class="my-4">
+        </div>
     </div>
-    <p>Released Date: {{ movie.releasedDate }}</p>
-    Trailer:
-    <a [href]="movie.trailerLink" target="_blank">Watch it here!</a>
-    <hr/>
-  </div>
-  
+</div>
