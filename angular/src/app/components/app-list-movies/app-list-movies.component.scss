@@ -1,11 +1,11 @@
 /* Add custom styles if needed */
 .row {
-    margin: 0; /* Remove default margin to avoid horizontal scroll */
+    margin: 0; 
 }
 
 .card {
     width: 100%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    box-shadow: 0 4px 8px rgb(255, 255, 255); /* Add a subtle box shadow */
 }  
 
 .card-title {
@@ -16,4 +16,7 @@
 .card-text {
     margin-bottom: 10px;
 }
-  /* Adjust styling as needed */  
+
+.star-icon {
+    color: gold; 
+}
