@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { AppListMoviesComponent } from './components/app-list-movies/app-list-movies.component';
+import { MoviesComponent } from './components/movies/movies.component';
 
 export const routes: Routes = [
-    { path: 'main', component: AppListMoviesComponent },
-    { path: '', redirectTo: '/main', pathMatch: 'full' },
+    { path: 'movies', component: MoviesComponent },
+    { path: '', redirectTo: '/movies', pathMatch: 'full' },
 ];
